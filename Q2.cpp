@@ -31,19 +31,14 @@ void question_2() {
     std::vector<int> count(bills.size(), 0);
 
     // Calculate the optimal number of bills for each denomination
-    int left = amount; // Initialize remaining amount to be withdrawn
     for (int i = 0; i < bills.size(); ++i) {
         count[i] = amount / bills[i]; // Calculate the number of bills for the current denomination
         amount %= bills[i]; // Update the remaining amount
-        if (count[i] > 0) {
-            left -= (bills[i] * count[i]); // Subtract the total value of current denomination bills from the remaining amount
-        }
     }
 
     // Check if the ATM can provide the exact amount
-    std::cout << "left: " << left << std::endl;
-    if (left != 0) {
-        std::cout << "ATM machine cannot be able to give the complete amount it gives " << left << " unit bill less" << std::endl;
+    if (amount != 0) {
+        std::cout << "ATM machine cannot be able to give the complete amount it gives " << amount << " unit bill less" << std::endl;
     }
 
     // Print the calculated bill distribution
