@@ -1,20 +1,46 @@
 // Interview.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include <iostream>
+#include <stdio.h>
+#include "interview.h"
+
+// In this question,The factory that you are working at has a crane programmed to move in one dimension. After its start, it 
+// makes a specific movement each consecutive minute that passes.
+//- Start: Crane is started from position 0.
+//- 1st Min : Crane moves 1 meter to the right.It is now in position + 1.
+//- 2nd Min : Crane moves 3 meters to the left.It is now in position - 2.
+//- 3rd Min : Crane moves 2 meters to the left.It is now in position - 4.
+//- 4th Min : Crane moves 1 meter to the right.It is now in position - 3.
+//- 5th Min : Crane moves 4 meters to the right.It is now in position + 1.
+// After this, it continuously repeats the same movements from the beginning(1 meter to the right, 3
+//	meters to the left, …).
+// This is a solution for this problem
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int i = 0;
+	int limit = 5;
+	while (i < limit)
+	{
+		int question_no = 0;
+		std::cout << "which question should be answered enter an question number in integer: ";
+		std::cin >> question_no;
+		if (question_no == 1)
+		{
+			question_1();
+			return 0;
+		}
+		else if (question_no == 2)
+		{
+			question_2();
+			return 0;
+		}
+		else
+			std::cout << "incorrect input (you entered: " << question_no << ") please enter number 1 or 2 " << std::endl;
+		i++;
+	}
+	std::cout << "incorrect input entered " << i << " times. Program aborted."<<std::endl;
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
