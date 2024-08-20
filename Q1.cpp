@@ -63,7 +63,7 @@ void question_1() {
     }
 
     // Pause the program before closing the terminal
-    std::cout << "Press any key to continue...";
-    std::cin.get();
-    return;
+    std::cout << std::endl << "Press enter any intereger to close the program...";
+    int input;
+    std::cin >> input;
 }
